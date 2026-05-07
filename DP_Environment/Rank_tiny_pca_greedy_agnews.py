@@ -922,7 +922,7 @@ if __name__ == "__main__":
         
         # if t == args.times - 1:
         #     all_acc = []
-        #     num_clients_detected = len(client_models)  # 或你的 num_clients
+        #     num_clients_detected = len(client_models)  
 
         #     for cid in range(num_clients_detected):
         #         client_model = AutoModelForCausalLM.from_pretrained(model_name)
