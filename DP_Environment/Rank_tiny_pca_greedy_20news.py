@@ -922,42 +922,6 @@ if __name__ == "__main__":
         Sigma_mean_list.append(round(Sigma_mean, 4))
         Acc_mean_list.append(round(Acc_mean, 4))
 
-        # if t == args.times - 1:
-        #     all_acc = []
-
-        #     for cid in successful_cids:
-        #         client_model = AutoModelForCausalLM.from_pretrained(model_name)
-        #         client_model = TinyLlamaForNewsClassification(client_model, num_classes, client_id=cid)
-
-        #         client_lora_config = get_client_lora_config(cid)
-        #         client_model.base_model = get_peft_model(client_model.base_model, client_lora_config)
-
-        #         # 注意：这里只加载 base_model 的 state_dict
-        #         state_dict = client_model.base_model.state_dict()
-        #         for k in client_models[cid]:
-        #             state_dict[k] = client_models[cid][k]
-
-        #         missing, unexpected = client_model.base_model.load_state_dict(state_dict, strict=False)
-        #         print("[CHECK] missing:", missing)
-        #         print("[CHECK] unexpected:", unexpected)
-
-        #         # 再单独加载 classifier
-        #         client_model.classifier.load_state_dict(client_classifiers[cid], strict=True)
-
-        #         client_model.base_model = client_model.base_model.merge_and_unload()
-        #         client_model.eval()
-
-        #         trainer = Trainer(
-        #             model=client_model,
-        #             args=global_training_args,
-        #             eval_dataset=global_val_dataset,
-        #             compute_metrics=compute_metrics,
-        #         )
-        #         metrics_eval = trainer.evaluate()
-        #         acc = float(metrics_eval.get("eval_accuracy", float("nan")))
-        #         all_acc.append(acc)
-
-        #     print(f"client_standalone_acc={all_acc}")
 
     print(f"Global_acc_list= {Global_acc_list}")
     print(f"Global_average_list= {Global_average_list}")
